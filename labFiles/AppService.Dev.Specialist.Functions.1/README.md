@@ -1,7 +1,7 @@
 # AppService.Dev.Specialist.Functions.1
 ARM Template for deploying lab for AppService DEV Specialist Certification - Azure Functions Lab #1
 
-[![Deploy To Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https://github.com/makoto-kajihara/AzureFunctionConsumer/blob/master/labFiles/AppService.Dev.Specialist.Functions.1/azuredeploy.json)
+[![Deploy To Azure](https://aka.ms/deploytoazurebutton)](https%3A%2F%2Fgithub.com%2Fmakoto-kajihara%2FAzureFunctionConsumer%2Fblob%2Fmaster%2FlabFiles%2FAppService.Dev.Specialist.Functions.1%2Fazuredeploy.json)
 
 ## This arm deployment will provision:
 
