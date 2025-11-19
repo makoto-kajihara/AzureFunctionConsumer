@@ -100,14 +100,14 @@
               "name": "AzureWebJobsStorage",
               "value": "[concat('DefaultEndpointsProtocol=https;AccountName=', variables('storageAccountName'), ';EndpointSuffix=', environment().suffixes.storage, ';AccountKey=',listKeys(resourceId('Microsoft.Storage/storageAccounts', variables('storageAccountName')), '2019-06-01').keys[0].value)]"
             },
-            {
-              "name": "WEBSITE_CONTENTAZUREFILECONNECTIONSTRING",
-              "value": "[concat('DefaultEndpointsProtocol=https;AccountName=', variables('storageAccountName'), ';EndpointSuffix=', environment().suffixes.storage, ';AccountKey=',listKeys(resourceId('Microsoft.Storage/storageAccounts', variables('storageAccountName')), '2019-06-01').keys[0].value)]"
-            },
-            {
-              "name": "WEBSITE_CONTENTSHARE",
-              "value": "[toLower(variables('functionAppName'))]"
-            },
+			{
+			   "name": "AzureWebJobsStorage__credential",
+				"value": "managedidentity",
+			},
+			{
+			"name":"AzureWebJobsStorage__clientId",
+			"value": "7526a7ac-5db4-4379-b1c7-780b2f1250c3"
+			},
             {
               "name": "FUNCTIONS_EXTENSION_VERSION",
               "value": "~3"
@@ -168,8 +168,6 @@
            "AzureWebJobsDisableHomepage": "true",
            "BLOB_CONNECTION": "[concat('DefaultEndpointsProtocol=https;AccountName=x', variables('storageAccountName'), ';EndpointSuffix=', environment().suffixes.storage, ';AccountKey=',listKeys(resourceId('Microsoft.Storage/storageAccounts', variables('storageAccountName')), '2019-06-01').keys[0].value)]",
 	   "TIMER_FUNCTION_GO": "true",
-           "WEBSITE_CONTENTAZUREFILECONNECTIONSTRING": "[concat('DefaultEndpointsProtocol=https;AccountName=', variables('storageAccountName'), ';EndpointSuffix=', environment().suffixes.storage, ';AccountKey=',listKeys(resourceId('Microsoft.Storage/storageAccounts', variables('storageAccountName')), '2019-06-01').keys[0].value)]",
-           "WEBSITE_CONTENTSHARE": "[toLower(variables('functionAppName'))]",
            "FUNCTIONS_EXTENSION_VERSION": "~3",
            "APPINSIGHTS_INSTRUMENTATIONKEY": "[reference(resourceId('microsoft.insights/components', variables('applicationInsightsName')), '2020-02-02-preview').InstrumentationKey]",
            "FUNCTIONS_WORKER_RUNTIME": "[variables('functionWorkerRuntime')]",
@@ -181,3 +179,4 @@
  ]
 
 }
+
